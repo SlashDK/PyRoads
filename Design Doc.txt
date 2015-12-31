@@ -1,0 +1,17 @@
+The game has been designed as follows:
+
+MainScreen.py : Shows the title screen, instructions and provides access to the regular game as well as the level creator. It also maintains the current progress in the game, where each level is a separate instance and calls a level using Movement.py after the previous one has ended.
+
+Movement.py : Handles the directional movement and jumping of the Main character (spacecraft) by sending the relevant call to Heroclass.py. Also invokes Board.py which draws the level and in turn calls the game levels. In case, a level made using the Level Creator is being tested, it is passed to Movement.py form MainScreen.py which in turn passes it to Board.py
+
+Board.py : Draws the level on the screen and changes the required data values when the spacecraft connects with a special tile. It calls Levels.py if a regular game is being played and always calls TileClass.py to get the color for all tiles and actions for special tiles.
+
+Heroclass.py : Handles the movement of the spacecraft and maintains all associated data
+
+TileClass.py : Maintains classes of the different tiles and returns their colors and special functions
+
+Levels.py : Maintains the levels for the a regular game.
+
+Screens.py : Draws the Win / Loss screens
+
+LevelCreator.py : Level creator. Saves to / loads from “game / levels / “. Closing it takes you back to MainScreen.py
